@@ -1,0 +1,31 @@
+name: Readme exporter
+
+on:
+  push:
+    paths:
+      - ".github/workflows/readme.yaml"
+      - "assets/images/readme/**"
+      - "README.md"
+    branches:
+      - main
+    workflow_dispatch:
+
+
+jobs:
+  export_readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Push readme to private repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'README.md'
+          destination_repo: 'DataDog/datadog-vscode'
+          destination_folder: 'extension'
+          user_email: 'roberto.huertas@datadoghq.com'
+          user_name: 'Roberto Huertas'
+          commit_message: 'chore(readme): extension readme update'
