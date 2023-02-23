@@ -1,11 +1,18 @@
 name: Readme exporter
 
 on:
+  push:
+    paths:
+      - ".github/workflows/readme.yaml"
+      - "assets/images/readme/**"
+      - "README.md"
+    branches:
+      - main
   workflow_dispatch:
 
 
 jobs:
-  export_readme_old:
+  export_readme:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
