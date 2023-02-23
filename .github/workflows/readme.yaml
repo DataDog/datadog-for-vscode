@@ -26,6 +26,6 @@ jobs:
           source_file: 'README.md'
           destination_repo: 'DataDog/datadog-vscode'
           destination_folder: 'extension'
-          user_email: 'roberto.huertas@datadoghq.com'
-          user_name: 'Roberto Huertas'
+          user_email: 'robot-ide-publisher@datadoghq.com'
+          user_name: 'Robot-IDE-Publisher'
           commit_message: 'chore(readme): extension readme update'
