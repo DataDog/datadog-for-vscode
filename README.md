@@ -1,11 +1,8 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 <div align="center">
-<img src="assets/images/logo.png" width="120">
+<img src="https://github.com/DataDog/datadog-for-vscode/blob/e485aba69d802efd566d87f34571584589185ff2/assets/images/logo.png" width="120">
 <h1> Datadog for VS Code </h1>
-<p>Turbo Charge Software Development with Datadog for VS Code</p>
-<p>Check the <a href="https://cuddly-adventure-l8j627m.pages.github.io/" target="_blank">docs</a> for more information.</p>
-<br/>
 </div>
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
@@ -16,9 +13,9 @@ The [Datadog](https://www.datadoghq.com/) VS Code extension helps bring the powe
 >
 > This is a **Public Beta** version of the Datadog extension, intended for Datadog customers that use the [Synthetic Tests](https://docs.datadoghq.com/synthetics/). We currently only support [HTTP API tests](https://docs.datadoghq.com/synthetics/api_tests/http_tests/?tab=requestoptions) and [Browser tests](https://docs.datadoghq.com/synthetics/browser_tests/?tab=requestoptions).
 
-![synthetic tests](assets/images/readme/readme_synthetic_tests_01.png)
+![synthetic tests](https://github.com/DataDog/datadog-for-vscode/blob/e485aba69d802efd566d87f34571584589185ff2/assets/images/readme/readme_synthetic_tests_01.png)
 
-![synthetic tests](assets/images/readme/readme_synthetic_tests_02.png)
+![synthetic tests](https://github.com/DataDog/datadog-for-vscode/blob/e485aba69d802efd566d87f34571584589185ff2/assets/images/readme/readme_synthetic_tests_02.png)
 
 ## Features
 
