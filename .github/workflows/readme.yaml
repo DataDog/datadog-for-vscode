@@ -15,17 +15,33 @@ jobs:
   export_readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Push readme to private repo
-        uses: dmnemec/copy_file_to_another_repo_action@main
+      - name: Clone private repo
+        shell: bash
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: 'README.md'
-          destination_repo: 'DataDog/datadog-vscode'
-          destination_folder: 'extension'
-          user_email: 'robot-ide-publisher@datadoghq.com'
-          user_name: 'Robot-IDE-Publisher'
-          commit_message: 'chore(readme): extension readme update'
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        run: |
+          mkdir new_repo
+          cd new_repo
+          gh repo clone Datadog/datadog-vscode
+
+
+  # export_readme:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+
+  #     - name: Push readme to private repo
+  #       uses: dmnemec/copy_file_to_another_repo_action@main
+  #       env:
+  #         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+  #       with:
+  #         source_file: 'README.md'
+  #         destination_repo: 'DataDog/datadog-vscode'
+  #         destination_folder: 'extension'
+  #         user_email: 'robot-ide-publisher@datadoghq.com'
+  #         user_name: 'Robot-IDE-Publisher'
+  #         commit_message: 'chore(readme): extension readme update'
