@@ -11,4 +11,4 @@ The [Datadog](https://www.datadoghq.com/) VS Code extension helps bring the powe
 
 ## Help and Feedback
 
-For any feedback send an email to [team-ide-integrations@datadoghq.com](mailto:team-ide-integrations@datadoghq.com)
+For any feedback send an email to [team-ide-integration@datadoghq.com](mailto:team-ide-integration@datadoghq.com)
