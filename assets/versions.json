@@ -1,10 +1,10 @@
 {
   "internal": {
-    "version": "IDE-1334",
+    "version": "v0.8.0-internal.5",
     "url": "https://github.com/DataDog/datadog-vscode/releases/latest"
   },
   "beta": {
-    "version": "1688393298",
+    "version": "v0.7.8-stable",
     "url": "https://github.com/DataDog/datadog-for-vscode/releases/latest"
   }
 }
