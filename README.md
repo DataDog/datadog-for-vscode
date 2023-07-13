@@ -17,7 +17,7 @@ The [Datadog][datadog] extension for VS Code integrates with [Datadog][datadog] 
 <!-- markdownlint-disable MD041 -->
 <center>
 <br/>
-<div><img src=assets/images/readme/0723/datadog-vscode.png" alt="The Datadog for VS Code extension" /></div>
+<div><img src="assets/images/readme/0723/datadog-vscode.png" alt="The Datadog for VS Code extension" /></div>
 </center>
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
