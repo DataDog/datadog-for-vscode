@@ -9,6 +9,14 @@
 
 The [Datadog][datadog] extension for VS Code is in public beta. It is intended for all developers that use [Datadog][datadog] products. If the extension stops working unexpectedly, check for extension updates or [reach out to the team](#help-and-feedback).
 
+[Overview](#overview)
+| [Code Insights](#code-insights)
+| [Synthetic Tests](#synthetic-tests)
+| [View in VS Code](#view-in-vs-code)
+| [Logs Navigation](#logs-navigation)
+| [License](#license)
+| [Help and Feedback](#help-and-feedback)
+
 ## Overview
 
 The [Datadog][datadog] extension for VS Code integrates with [Datadog][datadog] to accelerate your development.
@@ -141,6 +149,8 @@ Please read this [End-User License Agreement][eula] carefully before downloading
 
 To share your feedback, email [team-ide-integration@datadoghq.com][feedback_email] or create an issue in our [public repository][public_repo].
 
+Check out the [issues][known_issues] section to discover known issues.
+
 [synthetics_tunnel]: https://docs.datadoghq.com/continuous_testing/testing_tunnel/
 [datadog]: https://www.datadoghq.com/
 [synthetics_create]: https://app.datadoghq.com/synthetics/create
@@ -155,6 +165,7 @@ To share your feedback, email [team-ide-integration@datadoghq.com][feedback_emai
 [flaky_test_management]: https://docs.datadoghq.com/continuous_integration/guides/flaky_test_management/
 [watchdog]: https://docs.datadoghq.com/watchdog/insights/
 [public_repo]: https://github.com/DataDog/datadog-for-vscode
+[known_issues]: https://github.com/DataDog/datadog-for-vscode/issues?q=is%3Aissue
 [eula]: https://www.datadoghq.com/legal/software-licenses/vs-code
 [api_tests]: https://docs.datadoghq.com/synthetics/api_tests/http_tests/?tab=requestoptions
 [browser_tests]: https://docs.datadoghq.com/synthetics/browser_tests/?tab=requestoptions
