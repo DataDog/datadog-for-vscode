@@ -7,7 +7,7 @@
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
 
-The [Datadog][datadog] extension for VS Code is in public beta. It is intended for all developers that use [Datadog][datadog] products. If the extension stops working unexpectedly, check for extension updates or [reach out to the team](#help-and-feedback).
+The Datadog extension for VS Code is intended for all developers that use Datadog products. If the extension stops working unexpectedly, check for extension updates or [reach out to the team](#help-and-feedback).
 
 [Overview](#overview)
 | [Code Insights](#code-insights)
