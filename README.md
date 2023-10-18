@@ -172,4 +172,3 @@ Check out the [issues][known_issues] section to discover known issues.
 [api_tests]: https://docs.datadoghq.com/synthetics/api_tests/http_tests/?tab=requestoptions
 [browser_tests]: https://docs.datadoghq.com/synthetics/browser_tests/?tab=requestoptions
 [log_explorer]: https://docs.datadoghq.com/logs/explorer/
-[test]: https://datadoghq.com
