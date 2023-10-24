@@ -147,6 +147,14 @@ You can tweak the Code Delta settings to change how the matching algorithm works
 
 Please read this [End-User License Agreement][eula] carefully before downloading or using the Datadog Visual Studio Code Extension.
 
+## Data and Telemetry
+
+Datadog anonymously collects information about your usage of this IDE, including how you interact with it, whether errors occurred while using it, and what caused those errors, in accordance with the [Datadog Privacy Policy](https://www.datadoghq.com/legal/privacy/) and Datadog's [VS Code extension EULA](https://www.datadoghq.com/legal/software-licenses/vs-code).
+
+If you don't wish to send this data to [Datadog](https://datadoghq.com), you can opt out at any time in the extension settings: `Datadog > Telemetry > Setup > Enable Telemetry`.
+
+If you disable the [VS Code telemetry](https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events) the Datadog extension will respect this setting.
+
 ## Help and Feedback
 
 To share your feedback, email [team-ide-integration@datadoghq.com][feedback_email] or create an issue in our [public repository][public_repo].
