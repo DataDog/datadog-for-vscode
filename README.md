@@ -43,9 +43,13 @@ The Datadog extension packs several features including:
 
 - [**Code Delta**](#code-delta) to more accurately map observability data to your files in VS Code.
 
+- [**Static Analysis**](#static-analysis) to detect and fix problems even before you commit changes.
+
 ## Requirements
 
-- **A Datadog account**: The extension requires a Datadog account. If you're new to Datadog, go to the [Datadog website][datadog] to learn more about Datadog's observability tools and sign up for a free trial.
+- **A Datadog account**: Most features require a Datadog account. If you're new to Datadog, go to the [Datadog website][datadog] to learn more about Datadog's observability tools and sign up for a free trial.
+
+- **VS Code Git**: The extension works better when VS Code Git integration is enabled. You can make sure that the integration is enabled by looking into the `git.enabled` setting.
 
 ## Code Insights
 
@@ -143,17 +147,29 @@ For example, all [View in VS Code](#view-in-vs-code) links on the Datadog platfo
 
 You can tweak the Code Delta settings to change how the matching algorithm works. In particular, you can modify the `Minimum Affinity` value, which determines the degree of confidence required to match lines.
 
+## Static Analysis
+
+The [Static Analysis][static_analysis] integration analyzes your code (locally) against predefined rules to detect and fix problems.
+
+The Datadog extension runs [Static Analysis][static_analysis] rules on your source files as you edit them. The goal is to detect and fix problems such as maintainability issues, bugs, or security vulnerabilities in your code before you commit your changes.
+
+[Static Analysis][static_analysis] supports scanning for many programming languages. For a complete list, see [Static Analysis Rules][static_analysis_rules]. For file types belonging to supported languages, issues are shown in the source code editor, and suggested fixes can be applied directly.
+
+When you start editing a source file, the extension checks for [static-analysis.datadog.yml][static_analysis_config_file] at your source repository’s root. It prompts you to create it if necessary.
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/static_analysis.mp4" controls title="Datadog Static Analysis Demo"></video>
+
 ## License
 
 Please read this [End-User License Agreement][eula] carefully before downloading or using the Datadog Visual Studio Code Extension.
 
 ## Data and Telemetry
 
-Datadog anonymously collects information about your usage of this IDE, including how you interact with it, whether errors occurred while using it, and what caused those errors, in accordance with the [Datadog Privacy Policy](https://www.datadoghq.com/legal/privacy/) and Datadog's [VS Code extension EULA](https://www.datadoghq.com/legal/software-licenses/vs-code).
+Datadog anonymously collects information about your usage of this IDE, including how you interact with it, whether errors occurred while using it, and what caused those errors, in accordance with the [Datadog Privacy Policy][datadog_privacy_policy] and Datadog's [VS Code extension EULA][eula].
 
-If you don't wish to send this data to [Datadog](https://datadoghq.com), you can opt out at any time in the extension settings: `Datadog > Telemetry > Setup > Enable Telemetry`.
+If you don't wish to send this data to [Datadog][datadog], you can opt out at any time in the extension settings: `Datadog > Telemetry > Setup > Enable Telemetry`.
 
-If you disable the [VS Code telemetry](https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events) the Datadog extension will respect this setting.
+If you disable the [VS Code telemetry][vs_code_telemetry] the Datadog extension will respect this setting.
 
 ## Help and Feedback
 
@@ -161,22 +177,27 @@ To share your feedback, email [team-ide-integration@datadoghq.com][feedback_emai
 
 Check out the [issues][known_issues] section to discover known issues.
 
-[synthetics_tunnel]: https://docs.datadoghq.com/continuous_testing/testing_tunnel/
-[datadog]: https://www.datadoghq.com/
-[synthetics_create]: https://app.datadoghq.com/synthetics/create
-[synthetics_started]: https://docs.datadoghq.com/getting_started/synthetics/api_test/
-[synthetics_browser]: https://docs.datadoghq.com/getting_started/synthetics/browser_test
-[source_code_integration]: https://docs.datadoghq.com/integrations/guide/source-code-integration/
-[datadog_default_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#datadog-default-roles
-[datadog_custom_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#custom-roles
-[feedback_email]: mailto:team-ide-integration@datadoghq.com
-[error_tracking]: https://docs.datadoghq.com/tracing/error_tracking/
-[vulnerability_management]: https://docs.datadoghq.com/security/application_security/vulnerability_management/
-[flaky_test_management]: https://docs.datadoghq.com/continuous_integration/guides/flaky_test_management/
-[watchdog]: https://docs.datadoghq.com/watchdog/insights/
-[public_repo]: https://github.com/DataDog/datadog-for-vscode
-[known_issues]: https://github.com/DataDog/datadog-for-vscode/issues?q=is%3Aissue
-[eula]: https://www.datadoghq.com/legal/software-licenses/vs-code
 [api_tests]: https://docs.datadoghq.com/synthetics/api_tests/http_tests/?tab=requestoptions
 [browser_tests]: https://docs.datadoghq.com/synthetics/browser_tests/?tab=requestoptions
+[datadog_custom_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#custom-roles
+[datadog_default_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#datadog-default-roles
+[datadog_privacy_policy]: https://www.datadoghq.com/legal/privacy/
+[datadog]: https://www.datadoghq.com/
+[error_tracking]: https://docs.datadoghq.com/tracing/error_tracking/
+[eula]: https://www.datadoghq.com/legal/software-licenses/vs-code
+[feedback_email]: mailto:team-ide-integration@datadoghq.com
+[flaky_test_management]: https://docs.datadoghq.com/continuous_integration/guides/flaky_test_management/
+[known_issues]: https://github.com/DataDog/datadog-for-vscode/issues?q=is%3Aissue
 [log_explorer]: https://docs.datadoghq.com/logs/explorer/
+[public_repo]: https://github.com/DataDog/datadog-for-vscode
+[source_code_integration]: https://docs.datadoghq.com/integrations/guide/source-code-integration/
+[static_analysis_config_file]: https://docs.datadoghq.com/continuous_integration/static_analysis/?tab=circleciorbs#setup
+[static_analysis_rules]: https://docs.datadoghq.com/continuous_integration/static_analysis/rules
+[static_analysis]: https://docs.datadoghq.com/continuous_integration/static_analysis
+[synthetics_browser]: https://docs.datadoghq.com/getting_started/synthetics/browser_test
+[synthetics_create]: https://app.datadoghq.com/synthetics/create
+[synthetics_started]: https://docs.datadoghq.com/getting_started/synthetics/api_test/
+[synthetics_tunnel]: https://docs.datadoghq.com/continuous_testing/testing_tunnel/
+[vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
+[vulnerability_management]: https://docs.datadoghq.com/security/application_security/vulnerability_management/
+[watchdog]: https://docs.datadoghq.com/watchdog/insights/
