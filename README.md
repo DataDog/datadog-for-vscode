@@ -184,7 +184,7 @@ Check out the [issues][known_issues] section to discover known issues.
 [datadog_privacy_policy]: https://www.datadoghq.com/legal/privacy/
 [datadog]: https://www.datadoghq.com/
 [error_tracking]: https://docs.datadoghq.com/tracing/error_tracking/
-[eula]: https://www.datadoghq.com/legal/software-licenses/vs-code
+[eula]: https://www.datadoghq.com/legal/eula/
 [feedback_email]: mailto:team-ide-integration@datadoghq.com
 [flaky_test_management]: https://docs.datadoghq.com/continuous_integration/guides/flaky_test_management/
 [known_issues]: https://github.com/DataDog/datadog-for-vscode/issues?q=is%3Aissue
