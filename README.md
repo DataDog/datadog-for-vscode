@@ -126,7 +126,22 @@ The **View in VS Code** feature provides a link from Datadog directly to your so
 
 ## Logs navigation
 
-You can navigate to the [Log Explorer][log_explorer] on the [Datadog platform][datadog] directly from your code source files. Select some text, right click, and look for the **Datadog > Search Logs With Selected Text** option.
+You can navigate to the [Log Explorer][log_explorer] on the [Datadog platform][datadog] directly from your source code files.
+
+If you're using a supported logging library, the extension is able to show you code lenses on the lines where it has detected log patterns that match the Datadog platform records:
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/logs_navigation.mp4" controls title="Datadog Logs Navigation Demo"></video>
+
+The currently supported logging libraries are:
+
+- [@datadog/browser-logs](https://docs.datadoghq.com/logs/log_collection/javascript/)
+- [Winston](https://github.com/winstonjs/winston)
+- [Pino](https://github.com/pinojs/pino)
+- [Morgan](https://github.com/expressjs/morgan)
+- [Bunyan](https://github.com/trentm/node-bunyan)
+- [Log4js](https://github.com/log4js-node/log4js-node)
+
+Alternatively, you can select some text in your source code, right click, and look for the **Datadog > Search Logs With Selected Text** option.
 
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
@@ -137,7 +152,7 @@ You can navigate to the [Log Explorer][log_explorer] on the [Datadog platform][d
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
 
-> This feature requires you to sign in to [Datadog][datadog] and link some services.
+> All these features require you to sign in to [Datadog][datadog].
 
 ## Code Delta
 
