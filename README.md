@@ -137,7 +137,6 @@ The currently supported logging libraries are:
 - [@datadog/browser-logs](https://docs.datadoghq.com/logs/log_collection/javascript/)
 - [Winston](https://github.com/winstonjs/winston)
 - [Pino](https://github.com/pinojs/pino)
-- [Morgan](https://github.com/expressjs/morgan)
 - [Bunyan](https://github.com/trentm/node-bunyan)
 - [Log4js](https://github.com/log4js-node/log4js-node)
 
