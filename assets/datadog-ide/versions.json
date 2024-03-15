@@ -1,0 +1,19 @@
+{
+  "0": {
+    "0.1.0": {
+      "server": {
+        "windows": {
+          "x86_64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-x86_64-pc-windows-msvc.zip"
+        },
+        "linux": {
+          "x86_64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-x86_64-unknown-linux-gnu.zip",
+          "aarch64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-aarch64-unknown-linux-gnu.zip"
+        },
+        "macos": {
+          "x86_64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-x86_64-apple-darwin.zip",
+          "aarch64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-aarch64-apple-darwin.zip"
+        }
+      }
+    }
+  }
+}
