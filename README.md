@@ -157,7 +157,7 @@ Alternatively, you can select some text in your source code, right click, and lo
 
 Code Delta matches the line numbers included in Datadog telemetry to the line numbers of the files you are currently working in VS Code.
 
-For example, all [View in VS Code](#view-in-vs-code) links on the Datadog platform encodes runtime version info, and the extension uses that to compute the corresponding line of code in your editor, taking into account version changes.
+For example, all [View in VS Code](#view-in-vs-code) links on the Datadog platform encode runtime version info, and the extension uses that to compute the corresponding line of code in your editor, taking into account version changes.
 
 You can tweak the Code Delta settings to change how the matching algorithm works. In particular, you can modify the `Minimum Affinity` value, which determines the degree of confidence required to match lines.
 
