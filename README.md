@@ -163,7 +163,15 @@ When you start editing a source file, the extension checks for [static-analysis.
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
 
-Once the configuration file is created, the static analyzer runs automatically in the background whenever a file is opened. You can also run a batch analysis for individual folders and even the entire workspace:
+Once the configuration file is created, the static analyzer runs automatically in the background whenever a file is opened. If you need to enable static analysis for a particular language you can use the following command from the Datadog Menu:
+
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+<div align="center"><img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/readme_static_analysis_onboading_command.png" alt="Static Analysis onboarding command." width="75%"/></div>
+<!-- markdownlint-enable MD041 -->
+<!-- markdownlint-enable MD033 -->
+
+You can also run a batch analysis for individual folders and even the entire workspace:
 
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/static_analysis_batch_analysis.mp4" controls loop muted autoplay title="Datadog Static Analysis Demo"></video>
 
