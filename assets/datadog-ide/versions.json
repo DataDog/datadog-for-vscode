@@ -1,6 +1,6 @@
 {
   "0": {
-    "0.1.1": {
+    "0.1.0": {
       "server": {
         "windows": {
           "x86_64": "https://github.com/DataDog/datadog-for-vscode/releases/download/Datadog-IDE-v0.1.0/Datadog-IDE-x86_64-pc-windows-msvc.zip"
