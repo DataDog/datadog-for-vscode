@@ -34,8 +34,6 @@ The Datadog extension packs several features including:
   - Reports by [Application Vulnerability Management][vulnerability_management]
   - [Flaky tests][flaky_test_management] detected by CI Visibility
 
-- [**Synthetic Tests**](#synthetic-tests) to provide quality assurance during development by allowing you to run existing Synthetic Tests against local servers.
-
 - [**Logs Navigation**](#logs-navigation) to allow you to search for logs from your code.
 
 - [**Static Analysis**](#static-analysis) to detect and fix problems even before you commit changes.
@@ -72,43 +70,6 @@ Code Insights include a detailed description for each issue, and links to:
 - The Datadog platform for additional information
 
 You can dismiss individual Code Insights and set filters to view the ones you are most interested in.
-
-## Synthetic Tests
-
-The Datadog extension enables you to [run Synthetic HTTP tests and browser tests on local environments][synthetics_tunnel] directly in VS Code. You can identify and address potential issues resulting from code changes before they are deployed into production and impact your end users.
-
-> We support [HTTP API tests][api_tests] and [Browser tests][browser_tests].
-
-<!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD041 -->
-<center>
-<br/>
-<div><img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/0723/vscode-extension-demo.png" alt="Synthetic Tests in VS Code"/></div>
-</center>
-<!-- markdownlint-enable MD041 -->
-<!-- markdownlint-enable MD033 -->
-
-### Run Synthetic tests locally
-
-1. Select a Synthetic test to execute. You can search for specific tests by clicking the **Search** icon.
-2. Change the test's configuration to convert the start URL and specify a `localhost` URL on the **Settings** page.
-3. Run the test.
-
-<!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD041 -->
-<center>
-<div><img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/0723/test_configuration_modified_starturl.png" alt="The Test Configuration panel and Settings page where you can specify the start URL of a Synthetics test to a localhost URL"/></div>
-</center>
-<!-- markdownlint-enable MD041 -->
-<!-- markdownlint-enable MD033 -->
-
-If you haven't set up Synthetic tests already, [create a test in Datadog][synthetics_create]. For more information about running tests on a local environment, see [Getting Started with API Tests][synthetics_started], [Getting Started with Browser Tests][synthetics_browser], and the [Continuous Testing Tunnel documentation][synthetics_tunnel].
-
-### Permissions
-
-By default, only users with the [Datadog Admin and Datadog Standard roles][datadog_default_roles] can create, edit, and delete Synthetic HTTP and browser tests. To get create, edit, and delete access to Synthetic HTTP and browser tests, upgrade your user to one of those two [default roles][datadog_default_roles].
-
-If you are using the [custom role feature][datadog_custom_roles], add your user to any custom role that includes `synthetics_read` and `synthetics_write` permissions.
 
 ## Logs navigation
 
@@ -256,8 +217,6 @@ To share your feedback, email [team-ide-integration@datadoghq.com][feedback_emai
 
 Check out the [issues][known_issues] section to discover known issues.
 
-[api_tests]: https://docs.datadoghq.com/synthetics/api_tests/http_tests/?tab=requestoptions
-[browser_tests]: https://docs.datadoghq.com/synthetics/browser_tests/?tab=requestoptions
 [custom_subdomain]: https://docs.datadoghq.com/account_management/multi_organization/#custom-sub-domains
 [datadog_custom_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#custom-roles
 [datadog_default_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#datadog-default-roles
@@ -287,9 +246,5 @@ Check out the [issues][known_issues] section to discover known issues.
 [static_analysis_config_file]: https://docs.datadoghq.com/continuous_integration/static_analysis/?tab=circleciorbs#setup
 [static_analysis_rules]: https://docs.datadoghq.com/continuous_integration/static_analysis/rules
 [static_analysis]: https://docs.datadoghq.com/continuous_integration/static_analysis
-[synthetics_browser]: https://docs.datadoghq.com/getting_started/synthetics/browser_test
-[synthetics_create]: https://app.datadoghq.com/synthetics/create
-[synthetics_started]: https://docs.datadoghq.com/getting_started/synthetics/api_test/
-[synthetics_tunnel]: https://docs.datadoghq.com/continuous_testing/testing_tunnel/
 [vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
 [vulnerability_management]: https://docs.datadoghq.com/security/application_security/vulnerability_management/
