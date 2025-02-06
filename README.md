@@ -161,7 +161,7 @@ Select a stack trace frame and inspect the values of all the variables that Data
 
 ## Recent Commits
 
-The Recent Commits feature enhances your development workflow by leveraging information from Datadog's Software Delivery suite: [CI Visibility][software_delivery_ci], [Test Visibility][software_delivery_test], and [Code Analysis][software_delivery_code].
+The Recent Commits feature enhances your development workflow by leveraging information from Datadog's Software Delivery suite: [CI Visibility][software_delivery_ci], [Test Optimization][software_delivery_test], and [Code Analysis][software_delivery_code].
 
 The Commit Alert monitors your recent commits and displays a notification on the status bar whenever a commit has triggered a CI issue, such as a test failure, a CI pipeline fail, or a new flaky test occurrence (see the setting `datadog.recentCommits.alert.check.notPassedTest` as an example).
 
@@ -217,6 +217,8 @@ To share your feedback, email [team-ide-integration@datadoghq.com][feedback_emai
 
 Check out the [issues][known_issues] section to discover known issues.
 
+[Cursor][cursor] user? You can find [our extension on the Open VSX registry directly][vsx_extension].
+
 [custom_subdomain]: https://docs.datadoghq.com/account_management/multi_organization/#custom-sub-domains
 [datadog_custom_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#custom-roles
 [datadog_default_roles]: https://docs.datadoghq.com/account_management/rbac/?tab=datadogapplication#datadog-default-roles
@@ -248,3 +250,5 @@ Check out the [issues][known_issues] section to discover known issues.
 [static_analysis]: https://docs.datadoghq.com/continuous_integration/static_analysis
 [vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
 [vulnerability_management]: https://docs.datadoghq.com/security/application_security/vulnerability_management/
+[cursor]: https://www.cursor.com
+[vsx_extension]: https://open-vsx.org/extension/datadog/datadog-vscode
