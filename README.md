@@ -205,7 +205,7 @@ Please read this [End-User License Agreement][eula] carefully before downloading
 
 ## Data and Telemetry
 
-Datadog anonymously collects information about your usage of this IDE, including how you interact with it, whether errors occurred while using it, and what caused those errors, in accordance with the [Datadog Privacy Policy][datadog_privacy_policy] and Datadog's [VS Code extension EULA][eula].
+Datadog collects information about your usage of this IDE, including how you interact with it, whether errors occurred while using it, and what caused those errors, in accordance with the [Datadog Privacy Policy][datadog_privacy_policy] and Datadog's [VS Code extension EULA][eula].
 
 If you don't wish to send this data to [Datadog][datadog], you can opt out at any time in the VS Code extension settings: `Datadog > Telemetry > Setup > Enable Telemetry` and select `disabled`.
 
