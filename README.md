@@ -6,7 +6,7 @@
 
 </h1>
 
-<h3>The Datadog extension for VS Code integrates with <a href="https://app.datadoghq.com">Datadog</a> to accelerate your development.</h3>
+<h3>Bring <a href="https://app.datadoghq.com">Datadog</a> to your code editor to accelerate your development.</h3>
 
 [![Version](https://img.shields.io/visual-studio-marketplace/v/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
