@@ -1,5 +1,7 @@
 <div align="center">
 
+# Datadog for VS Code
+
 [Overview](#overview)
 | [Requirements](#requirements)
 | [License](#license)
