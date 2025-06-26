@@ -29,7 +29,6 @@
 The Datadog extension packs several features including:
 
 - [**Code Insights**](#code-insights) to keep you informed about
-
   - Issues from [Error Tracking][error_tracking]
   - Reports by [Application Vulnerability Management][vulnerability_management]
   - [Flaky tests][flaky_test_management] detected by CI Visibility
@@ -39,8 +38,6 @@ The Datadog extension packs several features including:
 - [**Static Analysis**](#static-analysis) to detect and fix problems even before you commit changes.
 
 - [**Exception Replay**](#exception-replay) to help you debug your production code.
-
-- [**Recent Commits**](#recent-commits) to alert if one of your pushed commits has caused a CI problem and to help keep track of commits that affect your work.
 
 - [**File Insights**](#file-insights) to view the information that Datadog has for the file open on the active editor.
 
@@ -159,25 +156,11 @@ Select a stack trace frame and inspect the values of all the variables that Data
 
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/exception_replay.mp4" controls loop muted autoplay title="Datadog Exception Replay Demo"></video>
 
-## Recent Commits
-
-The Recent Commits feature enhances your development workflow by leveraging information from Datadog's Software Delivery suite: [CI Visibility][software_delivery_ci], [Test Optimization][software_delivery_test], and [Code Analysis][software_delivery_code].
-
-The Commit Alert monitors your recent commits and displays a notification on the status bar whenever a commit has triggered a CI issue, such as a test failure, a CI pipeline fail, or a new flaky test occurrence (see the setting `datadog.recentCommits.alert.check.notPassedTest` as an example).
-
-<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/recent_commit_alert.mp4" controls loop muted autoplay title="Recent Commit Alert"></video>
-
-The Recent Commits view displays your recent commits pushed to any of the repositories currently open in VS Code. Use the "Set Additional Authors" and "Set Additional Repositories" buttons in the view's toolbar to include commits from other authors and repositories.
-
-<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/recent_commit_view.mp4" controls loop muted autoplay title="Recent Commit View"></video>
-
-The Recent Commits feature aims to keep you informed and boost your productivity by highlighting commits that need your attention. It distinguishes your commits using the email configured in Git (`git config user.email`) and any "email aliases" you set up with the `datadog.recentCommits.setup.userAliases` setting. You can configure these aliases directly on your settings or by clicking the "Set User Aliases" button in the Recent Commits view toolbar.
-
 ## File Insights
 
 The File Insights view provides comprehensive information from Datadog about the file currently open in the active editor. Use this view to explore, search, and organize insights, and to quickly navigate to the specific locations in your code where these insights apply.
 
-<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/file_insights_view.mp4" controls loop muted autoplay title="Recent Commit View"></video>
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/file_insights_view.mp4" controls loop muted autoplay title="File Insights View"></video>
 
 ## View in VS Code
 
