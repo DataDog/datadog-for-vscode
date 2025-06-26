@@ -1,30 +1,15 @@
 <div align="center">
-<h1>
-<img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/logo.png" width="200"/>
-
-<b>Datadog for VS Code</b>
-
-</h1>
-
-<h3>Bring <a href="https://app.datadoghq.com">Datadog</a> to your code editor to accelerate your development.</h3>
-
-[![Version](https://img.shields.io/visual-studio-marketplace/v/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
-[![Ratings](https://img.shields.io/visual-studio-marketplace/r/datadog.datadog-vscode?style=for-the-badge&colorA=252525&colorB=6B1DAC)](https://marketplace.visualstudio.com/items?itemName=datadog.datadog-vscode)
 
 [Overview](#overview)
 | [Requirements](#requirements)
 | [License](#license)
 | [Help and Feedback](#help-and-feedback)
 
-<br/>
-
-![screenshot](https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/0723/datadog-vscode.png)
-
 </div>
 
 ## Overview
+
+![screenshot](https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/0723/datadog-vscode.png)
 
 The Datadog extension packs several features including:
 
