@@ -2,7 +2,7 @@
 <h1>
 <img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/logo.png" width="200"/>
 
-<b>Datadog for VS Code</b>
+<b>Datadog for VS Code and Cursor</b>
 
 </h1>
 
