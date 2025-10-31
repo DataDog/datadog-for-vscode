@@ -47,9 +47,8 @@ The extension includes these features:
 
 In Cursor, the extension includes access to the [Datadog Model Context Protocol (MCP) Server][mcp_server]. Enable the MCP Server to enhance Cursor's AI capabilities with your specific Datadog environment.
 
-1. Ensure you have an active version of [Node.js][node] installed on your local machine.
-2. Go to **Cursor Settings** (`Shift` + `Cmd/Ctrl` + `J`), and select the **MCP Tools** tab.
-3. Find the Datadog server and turn on the toggle to enable it. A list of available tools is displayed (expand or refresh if necessary).
+1. Go to **Cursor Settings** (`Shift` + `Cmd/Ctrl` + `J`), and select the **MCP Tools** tab.
+1. Find the Datadog server and turn on the toggle to enable it. A list of available tools is displayed (expand or refresh if necessary).
 
 ## Log annotations
 
@@ -212,4 +211,3 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [exception_replay]: https://docs.datadoghq.com/tracing/error_tracking/exception_replay/
 [code_security]: https://docs.datadoghq.com/security/code_security/
 [test_optimization]: https://docs.datadoghq.com/tests/explorer/
-[node]: https://nodejs.org/en/about/previous-releases
