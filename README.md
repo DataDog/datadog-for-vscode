@@ -17,7 +17,7 @@ The Datadog extension for VS Code and Cursor brings Datadog to your code editor 
 
 The extension includes these features:
 
-- [**Model Context Protocol (MCP) Server**](#mcp-server-setup-cursor-only): (Cursor only) Connect Cursor's AI agent to production telemetry, tools, and contexts from Datadog.
+- [**Model Context Protocol (MCP) Server**](#mcp-server-setup): Connect the AI agent to production telemetry, tools, and contexts from Datadog.
 
 - [**Log Annotations**](#log-annotations): Gauge log volumes and search logs from your code.
 
@@ -29,7 +29,7 @@ The extension includes these features:
 
 - [**Exception Replay**](#exception-replay): Debug your production code.
 
-- [**Fix in Chat**](#fix-in-chat): (Cursor only) Fix code errors, vulnerabilities, and flaky tests with AI-powered suggestions and explanations.
+- [**Fix in Chat**](#fix-in-chat): Fix code errors, vulnerabilities, and flaky tests with AI-powered suggestions and explanations.
 
 > Unless stated otherwise, all extension features are available for both VS Code and any other IDEs based on VS Code forks, such as Cursor.
 
@@ -41,14 +41,21 @@ The extension includes these features:
 
 - **Git**: The extension works better when Git is enabled in the IDE. Ensure this is enabled by checking the `git.enabled` setting.
 
-## MCP Server setup (Cursor only)
+## MCP Server setup
 
 > The Datadog MCP Server is in Preview. Complete [this form][mcp_server_preview] to request access.
 
-In Cursor, the extension includes access to the [Datadog Model Context Protocol (MCP) Server][mcp_server]. Enable the MCP Server to enhance Cursor's AI capabilities with your specific Datadog environment.
+The extension includes access to the [Datadog Model Context Protocol (MCP) Server][mcp_server]. Enable the MCP Server to enhance your IDE's AI capabilities with your specific Datadog environment.
+
+### In Cursor
 
 1. Go to **Cursor Settings** (`Shift` + `Cmd/Ctrl` + `J`), and select the **MCP Tools** tab.
 1. Find the Datadog server and turn on the toggle to enable it. A list of available tools is displayed (expand or refresh if necessary).
+
+### In VS Code
+
+1. Open the chat panel, select agent mode, and click the **Configure Tools** button.
+1. Find the Datadog server and tools in the list and check the boxes to enable them (expand or refresh if necessary).
 
 ## Log annotations
 
@@ -163,8 +170,6 @@ Select a stack trace frame and inspect the values of all the variables that Data
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/exception_replay.mp4" controls loop muted autoplay style="width:100%" title="Datadog Exception Replay Demo"></video>
 
 ## Fix in Chat
-
-> This extension feature is only supported in Cursor. It is not supported in VS Code.
 
 The **Fix in Chat** button appears in several contexts when the extension identifies errors or issues. Click the button to generate an AI chat prompt that summarizes the problem, includes relevant details and context, and gives specific instructions for the agent.
 
