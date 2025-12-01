@@ -189,7 +189,8 @@ If you don't wish to send this data to [Datadog][datadog], you can disable this 
 
 ## Help and Feedback
 
-To share your feedback, email [team-ide-integration@datadoghq.com][feedback_email] or create an issue in the extension's [public repository][public_repo].
+Help us improve the extension by sharing your feedback using the [feedback form][feedback_form], email us at [team-ide-integration@datadoghq.com
+][feedback_email], or create an issue in our [public repository][public_repo].
 
 Check out the [issues][known_issues] section to discover known issues.
 
@@ -201,6 +202,7 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [error_tracking]: https://docs.datadoghq.com/tracing/error_tracking/
 [eula]: https://www.datadoghq.com/legal/eula/
 [feedback_email]: mailto:team-ide-integration@datadoghq.com
+[feedback_form]: https://docs.google.com/forms/d/e/1FAIpQLSc5SYEKKTADkGm-5v-m0I9fmMnnumgWEqLhsUhPCYlcPva4lQ/viewform
 [known_issues]: https://github.com/DataDog/datadog-for-vscode/issues?q=is%3Aissue+label%3A%22known+issue%22
 [log_explorer]: https://docs.datadoghq.com/logs/explorer/
 [public_repo]: https://github.com/DataDog/datadog-for-vscode
