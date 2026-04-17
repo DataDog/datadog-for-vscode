@@ -43,14 +43,11 @@ The extension includes these features:
 
 ## MCP Server setup
 
-> The Datadog MCP Server is in Preview. Complete [this form][mcp_server_preview] to request access.
-
 The extension includes access to the [Datadog Model Context Protocol (MCP) Server][mcp_server]. Enable the MCP Server to enhance your IDE's AI capabilities with your specific Datadog environment.
 
 ### In Cursor
 
-1. Go to **Cursor Settings** (`Shift` + `Cmd/Ctrl` + `J`), and select the **MCP Tools** tab.
-1. Find the Datadog server and turn on the toggle to enable it. A list of available tools is displayed (expand or refresh if necessary).
+Install the [Datadog Cursor Plugin][cursor_plugin] from the Cursor marketplace. The plugin configures the Datadog MCP Server in Cursor automatically.
 
 ### In VS Code
 
@@ -213,8 +210,8 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
 [cursor]: https://www.cursor.com
 [vsx_extension]: https://open-vsx.org/extension/datadog/datadog-vscode
-[mcp_server_preview]: https://www.datadoghq.com/product-preview/datadog-mcp-server
 [mcp_server]: https://docs.datadoghq.com/bits_ai/mcp_server/
+[cursor_plugin]: https://cursor.com/marketplace/datadog
 [exception_replay]: https://docs.datadoghq.com/tracing/error_tracking/exception_replay/
 [code_security]: https://docs.datadoghq.com/security/code_security/
 [test_optimization]: https://docs.datadoghq.com/tests/explorer/
