@@ -25,9 +25,11 @@ The extension includes these features:
 
 - [**View in IDE**](#view-in-ide): Jump directly from code references in Datadog to your source files.
 
-- [**Static Code Analysis**](#static-code-analysis): Detect and fix problems before you commit changes.
+- [**Code Security**](#code-security): Detect and fix security vulnerabilities, bugs, and exposed secrets before you commit changes.
 
 - [**Exception Replay**](#exception-replay): Debug your production code.
+
+- [**Live Debugger**](#live-debugger): Add non-breaking, auto-expiring logpoints to running services to capture runtime data without redeploying.
 
 - [**Fix in Chat**](#fix-in-chat): Fix code errors, vulnerabilities, and flaky tests with AI-powered suggestions and explanations.
 
@@ -93,7 +95,7 @@ You can group code insights by kind, file, priority, or service. You can also ig
 <!-- markdownlint-enable MD041 -->
 <!-- markdownlint-enable MD033 -->
 
-For specific insights about the file currently open in the active editor, check the **File Insights** view in the IDE's file explorer. This view also lists issues discovered by [Static Code Analysis](#static-code-analysis) within the file.
+For specific insights about the file currently open in the active editor, check the **File Insights** view in the IDE's file explorer. This view also lists issues discovered by [Code Security](#code-security) within the file.
 
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/file_insights_view-2.mp4" controls loop muted autoplay style="width:100%" title="Datadog Code Insights"></video>
 
@@ -119,17 +121,19 @@ You can also use this feature to open your source files from an insight (such as
 
 > To use this feature, first configure [source code integration][source_code_integration] for your service.
 
-## Static Code Analysis
+## Code Security
 
-[Static Code Analysis][static_analysis] analyzes your code (locally) against predefined rules to detect and fix problems.
+The **Code Security** features analyze your code locally to detect and fix security issues and vulnerabilities before you commit your changes. The extension supports two complementary scan types: [Static Code Analysis](#static-code-analysis) and [Secret Scanning](#secret-scanning).
 
-The extension runs Static Code Analysis rules on the source files you have open in your workspace. This allows you to detect and fix problems such as maintainability issues, bugs, or security vulnerabilities in the code before you commit your changes.
+### Static Code Analysis
 
-Static Code Analysis supports scanning for many programming languages. For a complete list, see [Static Code Analysis Rules][static_analysis_rules]. For file types belonging to supported languages, issues are shown in the source code editor, and you can directly apply suggested fixes.
+[Static Code Analysis][static_analysis] analyzes your source files against predefined rules to catch security vulnerabilities, bugs, and maintainability issues.
+
+The extension runs Static Code Analysis rules on the source files you have open in your workspace. Static Code Analysis supports scanning for many programming languages. For a complete list, see [Static Code Analysis Rules][static_analysis_rules]. Issues are shown in the source code editor, and you can directly apply suggested fixes.
 
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/static_analysis.mp4" controls loop muted autoplay style="width:100%" title="Datadog Static Analysis Demo"></video>
 
-### Get started with Static Code Analysis
+#### Get started with Static Code Analysis
 
 When you start editing a source file, the extension checks for [`static-analysis.datadog.yml`][static_analysis_config_file] at your source repository's root. It prompts you to create it if necessary.
 
@@ -141,9 +145,47 @@ When you start editing a source file, the extension checks for [`static-analysis
 
 After you create the configuration file, the analyzer runs automatically in the background whenever you open a file. If you need to enable Static Code Analysis for a particular language, search for the command `Datadog: Configure Static Analysis Languages` in the command palette (`Shift` + `Cmd/Ctrl` + `P`).
 
-You can also run a batch analysis for individual folders and even the entire workspace. In the IDE's file explorer view, right-click a folder and select **Datadog Static Analysis > Analyze Folder** or **Analyze Workspace**.
+You can also run a batch analysis for individual folders and even the entire workspace. In the IDE's file explorer view, right-click a folder and select **Datadog Code Security \> Analyze Folder** or **Analyze Workspace**.
 
-> Static Code Analysis does not require a Datadog account, as source files are analyzed locally.
+#### Rule editor
+
+Write and test custom [Static Code Analysis rules][static_analysis_custom_rules] without leaving your IDE. Use the **Datadog DDSA Rule Editor** to design detection logic for internal standards, security patterns, or maintainability checks specific to your codebase.
+
+To open the rule editor, run the `Datadog: New DDSA Rule` command from the command palette (`Shift` + `Cmd/Ctrl` + `P`), or right-click a YAML file and select **Datadog Code Security \> Open in DDSA Rule Editor**.
+
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+<div align="center"><img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/code_security/static-analysis-rule-editor.jpg" alt="DDSA Rule Editor in VS Code"/></div>
+<!-- markdownlint-enable MD041 -->
+<!-- markdownlint-enable MD033 -->
+
+### Secret Scanning
+
+[Secret Scanning][secret_scanning] detects exposed credentials — API keys, tokens, and passwords — in your source files before you commit them. File contents are scanned locally against rules fetched from your Datadog organization, and findings appear in the editor as you type.
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/code_security/secret_scanning.mp4" controls loop muted autoplay style="width:100%" title="Datadog Secret Scanning Demo"></video>
+
+Secret Scanning is enabled by default and runs in the background whenever you open a source file. No local configuration is required — scan rules are fetched from the Datadog backend. All text files are scanned; binary files are skipped automatically.
+
+You can also scan an entire folder or workspace at once. In the IDE's file explorer view, right-click a folder and select **Datadog Code Security \> Analyze Folder** or **Analyze Workspace**.
+
+> Secret Scanning requires you to be signed in to Datadog, because detection rules are fetched from your Datadog organization.
+
+#### Review findings
+
+Detected secrets are shown in three places:
+
+- **Inline in the editor**: each finding appears as an underline on the detected secret, with severity derived from the rule's priority.
+- **Problems panel**: all findings are listed with the source `Datadog`.
+- **File Insights view**: findings are grouped alongside other Code Security issues.
+
+#### Suppress a finding
+
+To suppress an individual detection, use the code action for the flagged secret to insert a `no-dd-secrets` comment on the line above. The comment suppresses all secret findings on the immediately following line.
+
+#### Turn Secret Scanning on or off
+
+To toggle Secret Scanning, run the `Datadog: Turn on Secret Scanning` or `Datadog: Turn off Secret Scanning` command from the command palette (`Shift` + `Cmd/Ctrl` + `P`), or change the `datadog.codeSecurity.setup.secretScanning.enabled` setting.
 
 ## Exception Replay
 
@@ -165,6 +207,80 @@ Select an Error Tracking code insight from the Code Insights view. Go to the sta
 Select a stack trace frame and inspect the values of all the variables that Datadog captured from your production code.
 
 <video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/exception_replay.mp4" controls loop muted autoplay style="width:100%" title="Datadog Exception Replay Demo"></video>
+
+## Live Debugger
+
+The **Live Debugger** lets you add **logpoints** — auto-expiring, non-breaking breakpoints — to your running services to collect information for debugging. Logpoints are set dynamically, so you don't need to redeploy your code to investigate an issue. Logpoints are grouped into **sessions**, and you can activate, edit, deactivate, or delete sessions (or individual logpoints) at any time. All sessions and logpoints automatically deactivate after 60 minutes, and log events are rate-limited to one execution per second.
+
+To use this feature, your service must be set up for [Datadog Dynamic Instrumentation][dynamic_instrumentation], and remote code is matched to your local files using [Source Code Integration][source_code_integration].
+
+<!-- VIDEO: short overview of the "Datadog Live Debugger" activity in the sidebar, panning across the Sessions, Logpoints, Log Events, and Variables views with a logpoint actively capturing data from a running service. -->
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/live_debugger_overview.mp4" controls loop muted autoplay style="width:100%" title="Datadog Live Debugger Overview"></video>
+
+### The Datadog Live Debugger activity
+
+The extension contributes a dedicated **Datadog Live Debugger** activity to the IDE sidebar, with the following views:
+
+- **Sessions**: lists existing sessions and lets you activate, deactivate, delete, or refresh them, and open them in the Datadog UI. The view can be filtered to show only **your sessions**, only **active sessions**, and/or only sessions whose service repositories are open in the workspace.
+- **Logpoints**: lists the logpoints belonging to the selected session. From here you can enable, disable, edit, or delete a logpoint, jump to its source location, copy its id or link, or open it in Datadog.
+- **Log Events**: shows recent log events generated by the selected logpoint. You can open events in the Datadog UI or use **Generate Unit Test** to turn captured runtime values into a unit test (see below).
+- **Variables**: shows the variables captured for the selected log event as a searchable tree. You can copy values or jump to the variable's source location.
+- **Logpoint Editor**: a webview form used to create or edit a logpoint (service, environment, message template, condition, capture variables depth).
+
+### Source editor integration
+
+For lines that have a logpoint defined in the current session, the extension shows a status icon in the editor gutter and a code lens above the line, and lets you act on the logpoint from the line-number context menu:
+
+- **Right-click on the line number** of any line of code and select **Datadog Live Debugger \> Create Logpoint** to start creating a logpoint on that line.
+- For a line that already has a logpoint, the same submenu offers **Edit**, **Delete**, and either **Enable** or **Disable** depending on the logpoint's current state.
+- Click the code lens above the line to reveal the logpoint in the **Live Debugger** views.
+
+<!-- VIDEO: right-clicking on a line number in the editor, choosing "Datadog Live Debugger > Create Logpoint", filling out the Logpoint Editor (service, environment, message template, condition, capture variables depth), saving, and seeing the new logpoint marker appear next to the line and the logpoint show up in the Logpoints view. -->
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/live_debugger_create.mp4" controls loop muted autoplay style="width:100%" title="Creating a Datadog Live Debugger logpoint"></video>
+
+### Creating a logpoint
+
+To add a logpoint, right-click the line number for a line of code in the source editor and select **Datadog Live Debugger \> Create Logpoint**. The logpoint is added to the current session, or a new session is created if needed.
+
+The **Logpoint Editor** webview shows the following fields:
+
+- **Service** and **Environment**: target the service and environment where the logpoint will run. The list of services is filtered by the current file's language to show only compatible services.
+- **Message template**: descriptive text with variable references using the Dynamic Instrumentation expression language. The message is built from the runtime state immediately _before_ the line of code is executed. Generated messages automatically pass through the Dynamic Instrumentation Sensitive Data Scanner.
+- **Condition** (optional): when defined, a log event is emitted only if the expression evaluates to `true`. Use it to capture events based on runtime state (for example, a particular user or transaction id).
+- **Capture variables depth**: controls how deeply hierarchical data structures are traversed when capturing runtime values. Higher values provide more useful information but require more capacity.
+
+The editor warns you when no service or environment matches the file's language, or when the **remote service is associated with a different repository** than the local workspace — you can still create the logpoint in those cases.
+
+#### Local and remote versions
+
+The remote running code may be a different revision compared to the source you are editing. The extension uses Git commit information to map line numbers from your local file to the remote revision, so logpoints land on the correct line even if the remote is on a different commit. This requires your service to be tagged with Git information.
+
+> **Tip**: checking out locally the same revision that is running remotely shows you the same code in the IDE that is running in production, which simplifies the live debugging experience — but it isn't required.
+
+### Editing, enabling, disabling, and deleting
+
+- **Edit**: right-click a logpoint (in the editor or in the **Logpoints** view) and select **Edit** to update its message template, condition, or capture depth. Changing the service or environment requires deleting the logpoint and creating a new one. Saving an edit also extends the expiration to 60 minutes.
+- **Enable / Disable**: toggle a logpoint or a whole session from the views or the line-number context menu. Re-enabling a logpoint extends its expiration to 60 minutes.
+- **Delete**: deleting a logpoint does not delete the events it has already generated. Deleting a session deletes all of its logpoints and cannot be undone. The extension asks for confirmation before deleting (you can suppress these prompts in the extension settings).
+
+The gutter icon reflects the current status of each logpoint:
+
+| Icon                                                                                                                                                     | Status       | Meaning                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/live_debugger/probe_active_dark.png" alt="Active" width="16"/>     | **Active**   | The logpoint is installed and emits log events when the line of code is about to run.                                                                                                                |
+| <img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/live_debugger/probe_warning_dark.png" alt="Warning" width="16"/>   | **Warning**  | The logpoint may not be generating events yet. This is shown when the backend hasn't processed a recent change (`WAITING`) or no tracer agents are reporting for the targeted service (`NO_AGENTS`). |
+| <img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/live_debugger/probe_error_dark.png" alt="Error" width="16"/>       | **Error**    | The logpoint is not generating events because of an error, or its status is unknown.                                                                                                                 |
+| <img src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/live_debugger/probe_disabled_dark.png" alt="Disabled" width="16"/> | **Disabled** | The logpoint is inactive — either you disabled it manually or it has expired.                                                                                                                        |
+
+### Generate a unit test from a log event
+
+From the **Log Events** view, the **Generate Unit Test** action sends the runtime values captured by a logpoint (variables and arguments) to the chat agent with a prompt to produce a unit test that reproduces the captured state. This is useful to turn a real production event into a regression test.
+
+<!-- VIDEO: in the Live Debugger activity, selecting a Log Event with captured variables, right-clicking and choosing "Generate Unit Test", and showing the chat agent producing a unit test from the captured runtime values. -->
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/live_debugger_test_with_ai.mp4" controls loop muted autoplay style="width:100%" title="Creating a test using AI from Live Debugger-captured values"></video>
 
 ## Fix in Chat
 
@@ -207,6 +323,8 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [static_analysis_config_file]: https://docs.datadoghq.com/security/code_security/static_analysis/setup/#customize-your-configuration
 [static_analysis_rules]: https://docs.datadoghq.com/security/code_security/static_analysis/static_analysis_rules/
 [static_analysis]: https://docs.datadoghq.com/security/code_security/static_analysis/setup/
+[static_analysis_custom_rules]: https://docs.datadoghq.com/security/code_security/static_analysis/custom_rules/
+[secret_scanning]: https://docs.datadoghq.com/security/code_security/secret_scanning/
 [vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
 [cursor]: https://www.cursor.com
 [vsx_extension]: https://open-vsx.org/extension/datadog/datadog-vscode
@@ -215,3 +333,4 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [exception_replay]: https://docs.datadoghq.com/tracing/error_tracking/exception_replay/
 [code_security]: https://docs.datadoghq.com/security/code_security/
 [test_optimization]: https://docs.datadoghq.com/tests/explorer/
+[dynamic_instrumentation]: https://docs.datadoghq.com/dynamic_instrumentation/
