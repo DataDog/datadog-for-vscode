@@ -55,7 +55,7 @@ Follow the [Datadog MCP Server setup guide][mcp_setup_vscode] to configure the D
 
 ## Code Security
 
-The **Code Security** features analyze your code locally to detect and fix security issues and vulnerabilities before you commit your changes. The extension supports two complementary scan types: [Static Code Analysis](#static-code-analysis) and [Secret Scanning](#secret-scanning).
+The **Code Security** features analyze your code locally to detect and fix security issues and vulnerabilities before you commit your changes. The extension supports three complementary scan types: [Static Code Analysis](#static-code-analysis), [Secret Scanning](#secret-scanning), and [Infrastructure as Code (IaC) Scanning](#infrastructure-as-code-iac-scanning).
 
 ### Static Code Analysis
 
@@ -118,6 +118,32 @@ To suppress an individual detection, use the code action for the flagged secret 
 #### Turn Secret Scanning on or off
 
 To toggle Secret Scanning, run the `Datadog: Turn on Secret Scanning` or `Datadog: Turn off Secret Scanning` command from the command palette (`Shift` + `Cmd/Ctrl` + `P`), or change the `datadog.codeSecurity.setup.secretScanning.enabled` setting.
+
+### Infrastructure as Code (IaC) Scanning
+
+[Infrastructure as Code (IaC) Scanning][iac_security] detects cloud misconfigurations, such as missing encryption or overly permissive access, in supported IaC files. The extension scans files locally as you edit and displays findings in real time.
+
+#### Get started with IaC Scanning
+
+IaC Scanning is enabled by default and runs automatically in the background whenever you open or edit a supported IaC file. No separate scanner setup is required. The extension honors IaC configuration and exclusions in `code-security.datadog.yaml`. For configuration options, see [Configure IaC Security][iac_security_configuration]. For available rules, see [IaC Security rules][iac_security_rules].
+
+#### Review findings
+
+IaC misconfigurations are shown in three places:
+
+- **Inline in the editor**: each finding is highlighted on the affected line. Hover over it to view the severity, description, and rule.
+- **Problems panel**: all findings are listed with the source `Datadog`.
+- **File Insights view**: findings are grouped under **Infrastructure as Code** alongside other Code Security issues.
+
+<video src="https://github.com/DataDog/datadog-for-vscode/raw/main/assets/images/readme/code_security/iac_real_time_analysis.mp4" controls loop muted autoplay style="width:100%" title="Datadog IaC Analysis Demo"></video>
+
+#### Suppress a finding
+
+To suppress the IaC findings on a line, use the `Datadog: Ignore IaC violations on this line` code action. The extension inserts a `dd-iac-scan ignore-line` comment above the affected line using the appropriate comment syntax for the file.
+
+#### Turn IaC Scanning on or off
+
+To toggle IaC Scanning, change the `datadog.iacScanning.setup.enabled` setting.
 
 ## Code Insights
 
@@ -255,6 +281,9 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [static_analysis]: https://docs.datadoghq.com/security/code_security/static_analysis/setup/
 [static_analysis_custom_rules]: https://docs.datadoghq.com/security/code_security/static_analysis/custom_rules/
 [secret_scanning]: https://docs.datadoghq.com/security/code_security/secret_scanning/
+[iac_security]: https://docs.datadoghq.com/security/code_security/iac_security/
+[iac_security_configuration]: https://docs.datadoghq.com/security/code_security/iac_security/configuration/
+[iac_security_rules]: https://docs.datadoghq.com/security/code_security/iac_security/iac_rules/
 [vs_code_telemetry]: https://code.visualstudio.com/docs/getstarted/telemetry#_output-channel-for-telemetry-events
 [cursor]: https://www.cursor.com
 [vsx_extension]: https://open-vsx.org/extension/datadog/datadog-vscode
