@@ -294,9 +294,3 @@ Do you use [Cursor][cursor], or another fork of VS Code? Find the extension on t
 [code_security]: https://docs.datadoghq.com/security/code_security/
 [test_optimization]: https://docs.datadoghq.com/tests/explorer/
 [dynamic_instrumentation]: https://docs.datadoghq.com/dynamic_instrumentation/
-
-
-
-
-
-
